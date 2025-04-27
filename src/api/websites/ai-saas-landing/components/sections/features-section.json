@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_features_sections",
+  "info": {
+    "displayName": "Features Section",
+    "description": "Section showcasing product features"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "features": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feature.feature"
+    }
+  }
+}

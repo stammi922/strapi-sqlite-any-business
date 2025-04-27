@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pricing_plans",
+  "info": {
+    "singularName": "pricing-plan",
+    "pluralName": "pricing-plans",
+    "displayName": "Pricing Plan",
+    "description": "Different pricing tiers for the product"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "features": {
+      "type": "json",
+      "required": true
+    },
+    "cta": {
+      "type": "string",
+      "required": true
+    },
+    "ctaUrl": {
+      "type": "string",
+      "required": true
+    },
+    "mostPopular": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "order": {
+      "type": "integer",
+      "required": true,
+      "default": 1,
+      "min": 1
+    }
+  }
+}

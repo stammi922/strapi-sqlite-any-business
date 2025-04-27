@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_sections_cta_sections",
+  "info": {
+    "displayName": "CTA Section",
+    "description": "Call to action section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "primaryButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "primaryButtonUrl": {
+      "type": "string",
+      "required": true
+    },
+    "secondaryButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "secondaryButtonUrl": {
+      "type": "string",
+      "required": true
+    },
+    "features": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

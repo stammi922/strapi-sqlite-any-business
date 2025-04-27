@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_layout_navigation_links",
+  "info": {
+    "displayName": "Navigation Link",
+    "description": "Links for site navigation"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "isExternal": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "sublinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.navigation-link"
+    }
+  }
+}

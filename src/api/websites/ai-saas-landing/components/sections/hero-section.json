@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_sections_hero_sections",
+  "info": {
+    "displayName": "Hero Section",
+    "description": "Main hero section for landing pages"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "primaryButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "primaryButtonUrl": {
+      "type": "string",
+      "required": true
+    },
+    "secondaryButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "secondaryButtonUrl": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_layout_navigations",
+  "info": {
+    "displayName": "Navigation",
+    "description": "Site navigation structure"
+  },
+  "options": {},
+  "attributes": {
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.navigation-link",
+      "required": true
+    }
+  }
+}

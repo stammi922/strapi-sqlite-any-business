@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "glossary_terms",
+  "info": {
+    "singularName": "glossary-term",
+    "pluralName": "glossary-terms",
+    "displayName": "Glossary Term",
+    "description": "Glossary terms and definitions"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "term": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "term",
+      "required": true
+    },
+    "definition": {
+      "type": "richtext",
+      "required": true
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "relatedTerms": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::glossary-term.glossary-term",
+      "inversedBy": "relatedTerms"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

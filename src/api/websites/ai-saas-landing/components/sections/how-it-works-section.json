@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_how_it_works_sections",
+  "info": {
+    "displayName": "How It Works Section",
+    "description": "Section explaining how the product works"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "steps": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::how-it-works-step.how-it-works-step"
+    }
+  }
+}

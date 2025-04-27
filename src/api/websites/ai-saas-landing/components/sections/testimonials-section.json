@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_testimonials_sections",
+  "info": {
+    "displayName": "Testimonials Section",
+    "description": "Section showcasing customer testimonials"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "testimonials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::testimonial.testimonial"
+    }
+  }
+}
