@@ -557,6 +557,44 @@ export interface ApiFeatureFeature extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
+  collectionName: 'globals';
+  info: {
+    description: 'Configure global site settings';
+    displayName: 'Global';
+    pluralName: 'globals';
+    singularName: 'global';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    favicon: Schema.Attribute.Media<'images'>;
+    footer: Schema.Attribute.Component<'layout.footer', false> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::global.global'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    navigation: Schema.Attribute.Component<'layout.navigation', false> &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    siteName: Schema.Attribute.String & Schema.Attribute.Required;
+    socialLinks: Schema.Attribute.Component<'shared.social-link', true> &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlossaryTermGlossaryTerm
   extends Struct.CollectionTypeSchema {
   collectionName: 'glossary_terms';
@@ -589,6 +627,59 @@ export interface ApiGlossaryTermGlossaryTerm
     seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'term'> & Schema.Attribute.Required;
     term: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
+  collectionName: 'home_pages';
+  info: {
+    description: 'Configure the content for the home page';
+    displayName: 'Home Page';
+    pluralName: 'home-pages';
+    singularName: 'home-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cta: Schema.Attribute.Component<'sections.cta-section', false> &
+      Schema.Attribute.Required;
+    faq: Schema.Attribute.Component<'sections.faq-section', false> &
+      Schema.Attribute.Required;
+    featuresPreview: Schema.Attribute.Component<
+      'sections.features-section',
+      false
+    > &
+      Schema.Attribute.Required;
+    hero: Schema.Attribute.Component<'sections.hero-section', false> &
+      Schema.Attribute.Required;
+    howItWorks: Schema.Attribute.Component<
+      'sections.how-it-works-section',
+      false
+    > &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-page.home-page'
+    > &
+      Schema.Attribute.Private;
+    pricing: Schema.Attribute.Component<'sections.pricing-section', false> &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.Required;
+    testimonials: Schema.Attribute.Component<
+      'sections.testimonials-section',
+      false
+    > &
+      Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1267,7 +1358,9 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::faq-item.faq-item': ApiFaqItemFaqItem;
       'api::feature.feature': ApiFeatureFeature;
+      'api::global.global': ApiGlobalGlobal;
       'api::glossary-term.glossary-term': ApiGlossaryTermGlossaryTerm;
+      'api::home-page.home-page': ApiHomePageHomePage;
       'api::how-it-works-step.how-it-works-step': ApiHowItWorksStepHowItWorksStep;
       'api::pricing-plan.pricing-plan': ApiPricingPlanPricingPlan;
       'api::tag.tag': ApiTagTag;
