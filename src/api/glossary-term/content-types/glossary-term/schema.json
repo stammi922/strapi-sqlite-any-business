@@ -33,7 +33,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::glossary-term.glossary-term",
-      "inversedBy": "relatedTerms"
+      "mappedBy": "relatedTerms"
     },
     "seo": {
       "type": "component",
